@@ -8,7 +8,9 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
         server: {
-            allowedHosts: true
+            allowedHosts: [
+                "devserver-preview--thermvisia.netlify.app",
+            ]
         }
     },
     integrations: [react()],
