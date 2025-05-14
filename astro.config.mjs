@@ -8,9 +8,14 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
         server: {
-            allowedHosts: [
-                "devserver-preview--thermvisia.netlify.app",
-            ]
+            hmr: {
+                clientPort: 443
+            },
+            strictPort: true,
+            host: true,
+            // Add the host both ways to be safe
+            origin: "https://devserver-preview--thermvisia.netlify.app",
+            allowedHosts: ["devserver-preview--thermvisia.netlify.app", ".netlify.app"]
         }
     },
     integrations: [react()],
